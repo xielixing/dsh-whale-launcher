@@ -126,8 +126,11 @@ h1 { font-size: 22px; margin: 0 0 6px; font-weight: 600; letter-spacing: .5px; c
       <input id="dirInput" type="text" spellcheck="false" placeholder="例如 D:\deepseek-harness">
       <button id="saveBtn" type="button">保存</button>
     </div>
+    <div class="row" style="margin-top: 8px;">
+      <button id="stopBtn" type="button" style="flex: 1;">停止已运行的服务</button>
+    </div>
   </div>
-  <p class="hint">首次使用：请先双击运行仓库里的 install.bat 一次。<br>启动窗口会最小化，关闭它即停止服务。</p>
+  <p class="hint">首次使用：请先双击运行仓库里的 install.bat 一次。<br>服务在后台静默运行（无窗口），用上面的按钮停止。</p>
 </div>
 <script>
 (function () {
@@ -156,6 +159,18 @@ h1 { font-size: 22px; margin: 0 0 6px; font-weight: 600; letter-spacing: .5px; c
     setStatus('目录已保存：' + v)
   }
   document.getElementById('saveBtn').addEventListener('click', saveDir)
+
+  // 停止已运行的服务（后台无窗口，通过 dsh-launch://stop 关闭）
+  document.getElementById('stopBtn').addEventListener('click', function () {
+    window.location.href = 'dsh-launch://stop'
+    setStatus('已发送停止请求，正在确认 …')
+    setTimeout(function () {
+      probe().then(function (up) {
+        if (up) { setStatus('服务仍在运行，请稍后重试', true) }
+        else { stopSpout(); setStatus('服务已停止，可以重新启动') }
+      })
+    }, 1500)
+  })
 
   function startSpout() { wrap.classList.add('spouting') }
   function stopSpout() { wrap.classList.remove('spouting') }
