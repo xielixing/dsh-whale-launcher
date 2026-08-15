@@ -31,7 +31,7 @@ h1 { font-size: 22px; margin: 0 0 6px; font-weight: 600; letter-spacing: .5px; c
   filter: drop-shadow(0 8px 18px rgba(30, 64, 120, .18));
   transition: color .3s ease, filter .3s ease;
 }
-.whale-btn.spouting .fish {
+.spouting .fish {
   color: #1e80ff;
   filter: drop-shadow(0 6px 16px rgba(30, 128, 255, .35));
   animation: bob 1.5s ease-in-out infinite;
@@ -214,13 +214,10 @@ h1 { font-size: 22px; margin: 0 0 6px; font-weight: 600; letter-spacing: .5px; c
     probe().then(function (up) { if (up) jumpIn() })
   }
 
-  // #spout 演示模式：打开 launcher.html#spout 只播放喷水动画（不启动服务）
+  // #spout 演示模式：打开 launcher.html#spout 只播放喷水动画（不启动服务、不跳转）
   if (location.hash === '#spout') {
-    probe().then(function (up) {
-      if (up) return
-      wrap.classList.add('spouting')
-      setStatus('喷水动画演示（#spout 模式）')
-    })
+    wrap.classList.add('spouting')
+    setStatus('喷水动画演示（#spout 模式）')
   }
 
   // 用官方鲸鱼图形生成标签页/书签图标

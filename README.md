@@ -2,6 +2,10 @@
 
 一个带官方 DeepSeek 鲸鱼动画的桌面启动器：**点击鲸鱼 → 精致喷水动画 → 喷完自动启动 DeepSeek Harness → 自动进入**。
 
+## 💡 背景
+
+每次使用 DeepSeek Harness 都要打开终端、输入启动命令（例如 `node --import tsx/esm apps/cli/src/bin.ts web`）拉起 web 服务，再手动打开浏览器——太麻烦了。这个项目把整个流程变成一个动作：**点一下鲸鱼**。它会在喷水动画结束后自动拉起服务，并带你直接进入 DeepSeek Harness 界面。安装一次之后，每天只需要点一下书签、点一下鲸鱼。
+
 ![platform](https://img.shields.io/badge/platform-Windows-blue)
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![no-admin](https://img.shields.io/badge/admin-not%20required-brightgreen)
