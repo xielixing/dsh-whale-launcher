@@ -117,16 +117,6 @@ launcher.html 轮询 http://127.0.0.1:3080/（no-cors 探测）
 └── README.md
 ```
 
-## 🌐 加入 DeepSeek 社区
-
-想让更多 DeepSeek 用户看到这个项目：
-
-1. **GitHub Topics（最重要的"标签"）**：仓库页 → 右侧 ⚙️ Settings → 顶部 **Topics** 输入框，添加 `deepseek`、`deepseek-harness`、`launcher` 等标签。打上 topic 后，项目会出现在 GitHub 的话题聚合页（如 github.com/topics/deepseek），搜索这些标签的人都能找到你；
-2. **About 描述**：仓库主页右侧 About 写一句清楚的中文/英文介绍；
-3. **参与官方仓库**：给 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 点 Star / Watch，在它的 Discussions 里介绍这个工具；
-4. **精选列表**：向 awesome-deepseek 之类的社区精选仓库提交 PR，把自己的仓库加入列表；
-5. **社区发帖**：Reddit r/DeepSeek、X (Twitter)、掘金、V2EX 等平台发帖分享，附仓库链接。
-
 ## 📄 License
 
 [MIT](LICENSE)
